@@ -43,7 +43,7 @@ const drink = [{
     image: "https://imagens-cdn.canalrural.com.br/2018/06/1436903506062.jpg",
     title: "Suco de laraja 700ml",
     description: "Laranja fresca da fazenda do seu Mendes, uma delicia!!",
-    price: "8,00",
+    price: "8.00",
   },
   {
     id: 1,
@@ -58,7 +58,7 @@ const drink = [{
     title: " Refrigerante 2L",
     description: "Coca-Cola, Guarana Antartida, Fanta laranja e uva",
     price: "11.50",
-  },
+  }
 ];
 
 const dessert = [{
@@ -84,6 +84,41 @@ const dessert = [{
   },
 ];
 /* ----------------------------------------------------------------------------Implementar cardápio--------------------------------------------- */
+function root(){
+  document.querySelector(".root").innerHTML=`
+  <header>
+            <h1>DrivenEats</h1>
+            <p>Sua comida em 6 minutos</p>
+        </header>
+        <div class="container">
+            <div class="main menu">
+                <h1>Primero, seu prato</h1>
+                <div class="options">
+                </div>
+            </div>
+
+            <div class="drink menu">
+                <h1>Agora, sua bebida</h1>
+                <div class="options">
+                </div>
+            </div>
+
+            <div class="dessert menu">
+                <h1>Por fim, sua sobremesa</h1>
+                <div class="options">
+                </div>
+            </div>
+        </div>
+        <div class="overview hidden">
+
+        </div>
+        <footer>
+            <button class="inative" onclick="sum()">Selecionar os 3 intens para fechar o pedido</button>
+        </footer>
+  `
+  menu()
+}
+
 function menu() {
   main.map((dish) => {
     document.querySelector(".main .options").innerHTML += `
@@ -187,26 +222,21 @@ function sum() {
           if (dish.id == idMain) {
             mainPrice = Number(dish.price);
             dishMain = dish.title;
-            console.log(mainPrice);
           }
         });
         drink.map((dish) => {
           if (dish.id == idDrink) {
             drinkPrice = Number(dish.price);
             dishDrink = dish.title;
-            console.log(drinkPrice);
           }
         });
         dessert.map((dish) => {
           if (dish.id == idDessert) {
             dessertPrice = Number(dish.price);
             dishDessert = dish.title;
-            console.log(dessertPrice);
           }
         });
          total = (mainPrice+drinkPrice+dessertPrice).toFixed(2);
-    
-        console.log(total)
         confirmRequest(mainPrice, drinkPrice, dessertPrice,total);
       }
     }
@@ -223,15 +253,15 @@ function confirmRequest(mainPrice, drinkPrice, dessertPrice,total) {
                 </div>
                     <div class="main">
                         <div class="dish">${dishMain}</div>
-                        <div class="price">R$${mainPrice}</div>
+                        <div class="price">R$${(mainPrice).toFixed(2)}</div>
                     </div>
                     <div class="drink">
                         <div class="dish">${dishDrink}</div>
-                        <div class="price">R$${drinkPrice}</div>
+                        <div class="price">R$${(drinkPrice).toFixed(2)}</div>
                     </div>
                     <div class="dessert">
                         <div class="dish">${dishDessert}</div>
-                        <div class="price">R$${dessertPrice}</div>
+                        <div class="price">R$${(dessertPrice).toFixed(2)}</div>
                     </div>
                     <div class="total">
                         <div style="font-weight: 700;" >Total</div>
@@ -257,4 +287,4 @@ function pushRequest(){
   window.open(whatsapp)
 }
 /* -------------------Start---------- */
-menu();
+root()
