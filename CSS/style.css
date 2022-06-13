@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color:#E5E5E5 ;
+}
+
+.root{
+    position:relative;
+}
+
+header{
+width: 100%;
+height: 100px;
+
+position: fixed;
+top: 0;
+z-index: 0;
+
+padding: 10px 20px;
+
+color: white;
+
+ background-color:  #CF2B2B;
+ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+header h1{
+    font-family: 'Righteous', cursive;
+    font-size: 60px;
+}
+
+header p{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.root{
+    margin:150px 0px;
+}
+
+.container{
+    margin:0px 30px;
+}
+.menu h1 {
+    font-family:'Righteous', cursive; ;
+    color: #333333;
+    font-size: 30px;
+}
+
+.menu h2{
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    text-align: start;
+    margin: 5px 0px;
+}
+
+.menu p{
+    color: #A6A6A6;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    text-align: start;
+    margin: 5px 0px;
+}
+
+.options{
+    height:270px ;
+    margin: 15px 0;
+    display: flex;
+    overflow-x: scroll;
+
+}
+
+.container .dish{
+    height: 240px;
+    width: 180px;
+    padding: 10px;
+    margin: 0 15px;
+    box-sizing: border-box;
+
+    background-color: white;
+
+    text-align: center;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container .dish img{
+    width: 150px;
+    height: 90px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.container .price {
+    text-align: start;    
+}
+
+.container .dish.select{
+    border: 5px solid #32b72f;
+}
+
+.container .dish.select .check{
+    opacity: 1;
+}
+
+.container .dish .check{
+    color: #32b72f;
+    opacity: 0;
+    display: flex;
+    justify-content: left;
+}
+
+.overview{
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(255, 255, 255, 0.9);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overview .confirm{
+    width: 380px;
+    height: 360px;
+    padding: 20px;
+
+    background-color: #50D074;
+    border-radius: 25px;
+    box-shadow: 0 0 10px 1px rgb(0 0 0 / 25%);
+
+    color: white;
+    font-size: 22px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.overview .confirm h1{
+    font-weight: 700;
+}
+
+
+.overview .main, .overview .drink, .overview .dessert, .overview .total{
+    width: 330px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.overview button.request{
+    width: 100%;
+    height: 50px;
+
+    border: none;
+    border-radius: 40px;
+    background-color: white;
+
+    color: #50D074;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.overview button{
+    font-size: 22px;
+    font-weight: 700;
+
+    border: none;
+    background-color:#50D074;
+
+    color: white;
+}
+
+.hidden{
+    display: none;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+}
+
+footer button{
+    height: 64px;
+    width: 80%;
+
+    border: none;
+    border-radius: 50px;
+
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25)
+}
+
+footer button.inative{
+    background-color: #CBCBCB;
+}
+
+footer button.active{
+    background-color: #32B72F;
+}
+
+footer button:active{
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
